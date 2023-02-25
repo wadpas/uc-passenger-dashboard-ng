@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: ' app-root',
+  styleUrls: ['app.component.css'],
+  template: `
+  <div class="app">
+    {{title}}
+  </div>
+  `
 })
 export class AppComponent {
-  title = 'uc-passenger-dashboard-ng';
+  title: string;
+
+  constructor() {
+    this.title = 'Passenger Dashboard';
+  }
 }
