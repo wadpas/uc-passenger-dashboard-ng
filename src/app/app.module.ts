@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
 import { AppComponent } from "./app.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AppComponent } from "./app.component";
     BrowserModule,
     CommonModule,
     FormsModule,
-    PassengerDashboardModule
+    PassengerDashboardModule,
+    NgbModule
   ],
   bootstrap: [AppComponent]
 })

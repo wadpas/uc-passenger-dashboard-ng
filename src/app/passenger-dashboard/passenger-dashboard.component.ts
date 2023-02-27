@@ -5,11 +5,12 @@ import { Passenger } from "./passenger.interface";
     selector: 'passenger-dashboard',
     styleUrls: ['passenger-dashboard.component.css'],
     template: `
-    <div class="dashboard">
-        <passenger-count
+    <div>
+        <h3>Airline Passengers</h3>
+        <passenger-count 
             [items]="passengers">
         </passenger-count>
-        <passenger-detail
+        <passenger-detail lass="passenger-detail"
             *ngFor="let passenger of passengers"
             [detail]=passenger>
         </passenger-detail>
