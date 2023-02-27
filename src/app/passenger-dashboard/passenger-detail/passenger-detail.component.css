@@ -12,3 +12,8 @@
 .status.checked-in {
   background: #2bc03f;
 }
+
+button {
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}

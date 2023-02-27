@@ -12,8 +12,12 @@ import { PassengerDetailComponent } from "./passenger-detail/passenger-detail.co
         PassengerCountComponent,
         PassengerDetailComponent
     ],
-    imports: [CommonModule],
-    exports: [PassengerDashboardComponent],
+    imports: [
+        CommonModule
+    ],
+    exports: [
+        PassengerDashboardComponent
+    ],
 })
 export class PassengerDashboardModule {
 

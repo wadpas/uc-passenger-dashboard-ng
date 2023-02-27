@@ -10,16 +10,18 @@ import { Passenger } from "./passenger.interface";
         <passenger-count 
             [items]="passengers">
         </passenger-count>
-        <passenger-detail lass="passenger-detail"
+        <passenger-detail 
             *ngFor="let passenger of passengers"
-            [detail]=passenger>
+            [detail]="passenger"
+            (edit)="handleEdit($event)"
+            (remove)="handleRemove($event)">
         </passenger-detail>
     </div>`
 })
 
 export class PassengerDashboardComponent implements OnInit {
     passengers: Passenger[] = [];
-    constructor() { }
+
     ngOnInit(): void {
         this.passengers = [{
             id: 1,
@@ -43,5 +45,23 @@ export class PassengerDashboardComponent implements OnInit {
             children: [{ name: 'Tom', age: 12 }, { name: 'Any', age: 4 }]
         }
         ]
+    }
+
+    handleEdit(event: Passenger) {
+        this.passengers = this.passengers.map(
+            (passenger) => {
+                if (passenger.id === event.id) {
+                    passenger = Object.assign({}, passenger, event)
+                }
+                return passenger;
+            }
+        )
+        console.log(this.passengers)
+    }
+
+    handleRemove(event: Passenger) {
+        this.passengers = this.passengers.filter(
+            (passenger) => passenger.id !== event.id
+        );
     }
 }
