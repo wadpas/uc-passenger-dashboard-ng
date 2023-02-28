@@ -12,7 +12,12 @@
       "fullname": "Rose",
       "checkedIn": false,
       "checkInDate": null,
-      "children": [{ "name": "Ted", "age": 2 }]
+      "children": [
+        {
+          "name": "Ted",
+          "age": 2
+        }
+      ]
     },
     {
       "id": 3,
@@ -20,8 +25,14 @@
       "checkedIn": true,
       "checkInDate": 1690642000000,
       "children": [
-        { "name": "Tom", "age": 12 },
-        { "name": "Any", "age": 4 }
+        {
+          "name": "Tom",
+          "age": 12
+        },
+        {
+          "name": "Any",
+          "age": 4
+        }
       ]
     }
   ]
