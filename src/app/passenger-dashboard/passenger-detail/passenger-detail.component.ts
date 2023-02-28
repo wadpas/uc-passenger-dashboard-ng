@@ -38,6 +38,7 @@ import { Passenger } from "../passenger.interface";
     </div>
     `
 })
+
 export class PassengerDetailComponent implements OnChanges {
     @Input() detail: Passenger;
     @Output() remove: EventEmitter<any> = new EventEmitter();

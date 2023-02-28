@@ -5,12 +5,12 @@ import { Passenger } from '../passenger.interface';
     selector: 'passenger-count',
     template: `
     <div>
-        Total checked in: {{ checkedInCount() }} / {{ items.length }}
+        Total checked in: {{ checkedInCount() }} / {{ items?.length }}
     </div>
     `
 })
 export class PassengerCountComponent {
-    @Input() items: Passenger[];
+    @Input() items?: Passenger[];
 
     checkedInCount(): number {
         if (!this.items) return 0;

@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "passengers": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "fullname": "Stephen",
+      "checkedIn": true,
+      "checkInDate": 1690742000000,
+      "children": null
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "fullname": "Rose",
+      "checkedIn": false,
+      "checkInDate": null,
+      "children": [{ "name": "Ted", "age": 2 }]
+    },
+    {
+      "id": 3,
+      "fullname": "Omar",
+      "checkedIn": true,
+      "checkInDate": 1690642000000,
+      "children": [
+        { "name": "Tom", "age": 12 },
+        { "name": "Any", "age": 4 }
+      ]
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
