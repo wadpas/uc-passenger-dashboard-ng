@@ -1,12 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Baggage, Passenger } from "../../passenger-dashboard.interface";
 
 @Component({
     selector: 'passenger-form',
     styleUrls: ['passenger-form.component.css'],
     template: `
-    <form #form="ngForm" novalidate>
-        {{ detail | json}}
+    <form (ngSubmit)="handleSubmite(form.value, form.valid)" #form="ngForm" novalidate>
         <div>
             Passenger name: 
             <input type="text" name="fullname" required
@@ -31,7 +30,7 @@ import { Baggage, Passenger } from "../../passenger-dashboard.interface";
             </label>
         </div>
         <div *ngIf="form.value.chechedIn">
-            Chech in date:
+            Check in date:
             <input type="number" name="checkInDate" [ngModel]="detail?.checkInDate">
         </div>
         <div>
@@ -43,13 +42,13 @@ import { Baggage, Passenger } from "../../passenger-dashboard.interface";
                 </option>
             </select>
         </div>
-
-        {{ form.value | json}}
+        <button type="submite" class="btn btn-primary" [disabled]="form.invalid">Submite</button>
     </form>
     `
 })
 export class PassengerFormComponent {
-    @Input() detail?: Passenger
+    @Input() detail?: Passenger;
+    @Output() update: EventEmitter<Passenger> = new EventEmitter<Passenger>();
 
     baggage: Baggage[] = [{
         key: 'none',
@@ -68,6 +67,12 @@ export class PassengerFormComponent {
     toggleCheckIn(checkedIn: boolean) {
         if (checkedIn) {
             this.detail!.checkInDate = Date.now();
+        }
+    }
+
+    handleSubmite(passenger: Passenger, isValid: any) {
+        if (isValid) {
+            this.update.emit(passenger);
         }
     }
 }
