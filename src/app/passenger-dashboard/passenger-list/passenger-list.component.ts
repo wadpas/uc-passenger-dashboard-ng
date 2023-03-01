@@ -6,7 +6,7 @@ import { Passenger } from "../passenger-dashboard.interface";
 @Component({
     selector: 'passenger-list',
     template: `
-    <div>
+    <div class="page">
         <h3>Airline Passengers</h3>
         <passenger-count 
             [items]="passengers">

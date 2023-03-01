@@ -22,9 +22,6 @@ import { Passenger } from "../../passenger-dashboard.interface";
         <div class="date">
             Check in date: {{ detail.checkInDate ? (detail.checkInDate | date: 'MMMM d y') : 'Not checked in' }}
         </div>
-        <div class="children">
-            Children: {{ detail.children?.length || 0 }}
-        </div>
         <button type="button"
             class="btn btn-primary"
             (click)="toggleEdit()">

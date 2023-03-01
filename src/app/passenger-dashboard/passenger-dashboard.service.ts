@@ -20,6 +20,14 @@ export class PassengerDashboardService {
             );
     }
 
+    getPassenger(id: number) {
+        return this.http
+            .get<Passenger>(`${PASSENGER_API}/${id}`)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
     updatePassenger(passenger: Passenger) {
         return this.http
             .put<Passenger>(`${PASSENGER_API}/${passenger.id}`, passenger)
