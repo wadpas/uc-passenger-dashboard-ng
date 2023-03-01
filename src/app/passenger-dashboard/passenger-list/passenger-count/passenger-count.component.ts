@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Passenger } from '../passenger.interface';
+import { Passenger } from '../../passenger-dashboard.interface';
 
 @Component({
     selector: 'passenger-count',

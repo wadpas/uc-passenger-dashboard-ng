@@ -1,5 +1,5 @@
 import { Component, OnChanges, EventEmitter, Input, Output } from '@angular/core';
-import { Passenger } from "../passenger.interface";
+import { Passenger } from "../../passenger-dashboard.interface";
 
 @Component({
     selector: 'passenger-detail',

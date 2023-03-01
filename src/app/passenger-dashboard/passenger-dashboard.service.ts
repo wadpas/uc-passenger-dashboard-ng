@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 
-import { Passenger } from "./passenger.interface";
+import { Passenger } from "./passenger-dashboard.interface";
 
 const PASSENGER_API: string = 'http://localhost:3000/passengers';
 
