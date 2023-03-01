@@ -6,3 +6,7 @@ export interface Passenger {
     baggage: string
 }
 
+export interface Baggage {
+    key: string,
+    value: string,
+}
