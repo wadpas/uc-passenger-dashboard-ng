@@ -10,6 +10,7 @@ import { PassengerListComponent } from "./passenger-list/passenger-list.componen
 import { PassengerCountComponent } from "./passenger-list/passenger-count/passenger-count.component";
 import { PassengerDetailComponent } from "./passenger-list/passenger-detail/passenger-detail.component";
 import { PassengerDashboardService } from "./passenger-dashboard.service";
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PassengerDashboardService } from "./passenger-dashboard.service";
     imports: [
         CommonModule,
         BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
     exports: [
         PassengerDashboardComponent
