@@ -2,8 +2,8 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from "@angular/router";
 
-import { PassengerDashboardComponent } from "./passenger-dashboard.component"
 import { PassengerViewerComponent } from "./passenger-viewer/passenger-viewer.component"
 import { PassengerFormComponent } from "./passenger-viewer/passenger-form/passenger-form.component";
 import { PassengerListComponent } from "./passenger-list/passenger-list.component";
@@ -12,6 +12,15 @@ import { PassengerDetailComponent } from "./passenger-list/passenger-detail/pass
 import { PassengerDashboardService } from "./passenger-dashboard.service";
 import { FormsModule } from "@angular/forms";
 
+const routes: Routes = [
+    {
+        path: 'passengers',
+        children: [
+            { path: '', component: PassengerListComponent },
+            { path: ':id', component: PassengerViewerComponent }
+        ]
+    }
+];
 
 @NgModule({
     declarations: [
@@ -19,17 +28,14 @@ import { FormsModule } from "@angular/forms";
         PassengerCountComponent,
         PassengerFormComponent,
         PassengerDetailComponent,
-        PassengerDashboardComponent,
         PassengerViewerComponent
     ],
     imports: [
         CommonModule,
         BrowserModule,
         HttpClientModule,
-        FormsModule
-    ],
-    exports: [
-        PassengerDashboardComponent
+        FormsModule,
+        RouterModule.forChild(routes)
     ],
     providers: [
         PassengerDashboardService

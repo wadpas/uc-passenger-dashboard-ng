@@ -1,0 +1,20 @@
+.nav {
+  margin: 0 0 1rem;
+  padding: 0 0 1rem;
+  border-bottom: 1px solid #dce5e5;
+}
+
+a {
+  background: #c6d2e0;
+  color: #faf3f3;
+  padding: 0.7rem 2rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+a.active {
+  color: #fff;
+  background: #7ba9e2;
+}
